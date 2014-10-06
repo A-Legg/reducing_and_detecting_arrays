@@ -21,22 +21,26 @@ describe Students do
   end
 
   it 'can return a string of student names' do
+
     expect(students.name_string).to eq "Bob Sue Greg Amanda Steve"
   end
 
   it 'can find a student older than a certain age' do
+
     actual = students.find_first_older_than(10)
 
     expect(actual).to eq({name: "Greg", age: 15})
   end
 
   it 'can find out if there are any old enough to drink' do
+
     expect(students.any_older_than?(21)).to eq true
 
     expect(students.any_older_than?(55)).to eq false
   end
 
   it 'can find a specific student' do
+
     actual = students.find_student({name: "Sue", age: 10})
     expect(actual).to eq({name: "Sue", age: 10})
 
@@ -46,12 +50,14 @@ describe Students do
   end
 
   it 'can determine if a specific student is present' do
+
     expect(students.student_present?({name: "Sue", age: 10})).to eq true
 
     expect(students.student_present?({name: "Homer", age: 30})).to eq false
   end
 
   it 'can group students by age' do
+
     expected = {
         10 => ["Bob", "Sue"],
         15 => ["Greg"],
